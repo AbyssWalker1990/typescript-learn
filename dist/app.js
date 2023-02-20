@@ -1,8 +1,20 @@
-class Department {
+// type AddFn = (a: number, b: number) => number
+let add
+add = (n1, n2) => {
+  return n1 + n2
+}
+class Person {
   name
   constructor (n) {
-    this.name = n
+    if (n) {
+      this.name = n
+    }
+  }
+
+  greet (phrase) {
+    console.log('Hi, my name is ' + phrase)
   }
 }
-const accounting = new Department('Accounting')
-console.log(accounting)
+let user1
+user1 = new Person()
+user1.greet('Lol')
