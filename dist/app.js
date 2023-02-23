@@ -1,46 +1,21 @@
-// const names: Array<string> = []
-// const promise: Promise<string> = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     resolve('this is done')
-//   }, 2000)
-// })
-// promise.then(data => {
-//   data.split(' ')
-// })
-function merge (objA, objB) {
-  return Object.assign(objA, objB)
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+function Logger(constructor) {
+    console.log('Logging');
+    console.log(constructor);
 }
-const mergedObj = merge({ name: 'Max' }, { age: 30 })
-console.log(mergedObj)
-function countAndDescribe (element) {
-  let descriptionText = 'Got No value'
-  if (element.length > 0) {
-    descriptionText = 'Got ' + String(element.length) + 'elements'
-  }
-  return [element, descriptionText]
-}
-console.log(countAndDescribe(['Sports', 'Cooking']))
-function extractAndConvert (obj, key) {
-  return obj[key]
-}
-extractAndConvert({ name: 'Lol' }, 'name')
-class DataStorage {
-  data = []
-  addItem (item) {
-    this.data.push(item)
-  }
-
-  removeItem (item) {
-    this.data.splice(this.data.indexOf(item), 1)
-  }
-
-  getItems () {
-    return [...this.data]
-  }
-}
-const textStorage = new DataStorage()
-textStorage.addItem('Doll')
-textStorage.addItem('King')
-textStorage.removeItem('Doll')
-console.log(textStorage)
-const numberStorage = new DataStorage()
+let Person = class Person {
+    name = 'Max';
+    constructor() {
+        console.log('Creating person object...');
+    }
+};
+Person = __decorate([
+    Logger
+], Person);
+const pers = new Person();
+console.log(pers);
